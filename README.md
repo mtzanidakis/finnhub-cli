@@ -173,6 +173,25 @@ Errors are printed to stderr with a non-zero exit code.
 
 The CLI automatically tracks API calls in `~/.finnhub-cli/ratelimit.json` and will pause when the limit is reached. Set `FINNHUB_RATE_LIMIT=premium` if you have a paid plan.
 
+## AI Agent Integration
+
+finnhub-cli ships with a [`SKILL.md`](SKILL.md) file that documents all commands, flags, and common workflows in a format optimized for AI agents.
+
+### Claude Code
+
+Install as a personal skill (available across all projects):
+
+```bash
+mkdir -p ~/.claude/skills/finnhub-cli
+cp SKILL.md ~/.claude/skills/finnhub-cli/SKILL.md
+```
+
+Claude will automatically use it when relevant, or you can invoke it directly with `/finnhub-cli`.
+
+### Other agents
+
+Point your agent to `SKILL.md` in this repository, or include it in your agent's context. The file is self-contained and describes every command with flags, defaults, and example workflows.
+
 ## License
 
 [MIT](LICENSE)
